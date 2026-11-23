@@ -31,7 +31,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       # GitHub disables scheduled workflows after 60 days without repo activity.
       # Re-enabling the workflow resets that timer.
@@ -41,12 +41,12 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow enable deploy.yml --repo "$GITHUB_REPOSITORY" || echo "could not re-enable (non-fatal)"
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
 
       - name: Restore previous fingerprint
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v6
         with:
           path: .cache-prev
           key: fingerprint-${{ github.run_id }}
@@ -72,7 +72,7 @@ jobs:
       - name: Configure Pages
         if: steps.decide.outputs.skip != 'true'
         id: pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Build and check links
         if: steps.decide.outputs.skip != 'true'
@@ -85,14 +85,14 @@ jobs:
 
       - name: Upload artifact
         if: steps.decide.outputs.skip != 'true'
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
       - name: Deploy to GitHub Pages
         if: steps.decide.outputs.skip != 'true'
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
       - name: Remember this fingerprint
         if: steps.decide.outputs.skip != 'true'
@@ -102,7 +102,7 @@ jobs:
 
       - name: Save fingerprint
         if: steps.decide.outputs.skip != 'true'
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v6
         with:
           path: .cache-prev
           key: fingerprint-${{ github.run_id }}
