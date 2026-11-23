@@ -1,0 +1,108 @@
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      allow-removal:
+        description: Deploy even if a previously live game bundle can no longer be fetched
+        type: boolean
+        default: false
+  repository_dispatch:
+    types: [showcase-updated]
+  schedule:
+    - cron: '17 * * * *'   # hourly; skipped quickly when no game bundle changed
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  actions: write   # only used by the keep-alive step below
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      # GitHub disables scheduled workflows after 60 days without repo activity.
+      # Re-enabling the workflow resets that timer.
+      - name: Keep the schedule alive
+        if: github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow enable deploy.yml --repo "$GITHUB_REPOSITORY" || echo "could not re-enable (non-fatal)"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Restore previous fingerprint
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache-prev
+          key: fingerprint-${{ github.run_id }}
+          restore-keys: fingerprint-
+
+      - name: Fetch game showcase bundles
+        env:
+          PREV_FINGERPRINT: .cache-prev/fingerprint.txt
+          ALLOW_BUNDLE_REMOVAL: ${{ inputs.allow-removal && '1' || '0' }}
+          SHOWCASE_TOKEN: ${{ secrets.SHOWCASE_TOKEN }}
+        run: node scripts/fetch.mjs
+
+      - name: Decide whether anything changed
+        id: decide
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ] && [ -f .cache-prev/fingerprint.txt ] && cmp -s .cache-prev/fingerprint.txt .cache/fingerprint.txt; then
+            echo "No bundle changes since the last deploy; skipping."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Configure Pages
+        if: steps.decide.outputs.skip != 'true'
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Build and check links
+        if: steps.decide.outputs.skip != 'true'
+        env:
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}
+        run: |
+          export SITE_BASE="${BASE_PATH%/}/"
+          echo "SITE_BASE=$SITE_BASE"
+          npm run check
+
+      - name: Upload artifact
+        if: steps.decide.outputs.skip != 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy to GitHub Pages
+        if: steps.decide.outputs.skip != 'true'
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Remember this fingerprint
+        if: steps.decide.outputs.skip != 'true'
+        run: |
+          mkdir -p .cache-prev
+          cp .cache/fingerprint.txt .cache-prev/fingerprint.txt
+
+      - name: Save fingerprint
+        if: steps.decide.outputs.skip != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: .cache-prev
+          key: fingerprint-${{ github.run_id }}

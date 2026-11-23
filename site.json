@@ -1,0 +1,46 @@
+{
+  "name": "Syntcht Games",
+  "tagline": "Small, odd games you can play in your browser.",
+  "description": "Syntcht Games (say \"cinched\") is a shelf of small, experimental games. This site collects them, shows how far along each one is, and lets you try a demo in your browser.\n\nThe games are works in progress. Some are playable and some are early prototypes. Each game page says honestly where it stands.\n\nDemos here follow each game's current development build, so they change as the games do.",
+  "owner": "syntch",
+  "url": "https://syntch.github.io/",
+  "games": [
+    {
+      "slug": "beast-clash",
+      "repo": "syntch/beast-clash"
+    },
+    {
+      "slug": "verselings",
+      "repo": "syntch/VerselingsBetweenTheLines"
+    },
+    {
+      "slug": "void-drifter-2d",
+      "repo": "syntch/VoidDrifter2D"
+    },
+    {
+      "slug": "void-drifter-vr",
+      "repo": "syntch/VoidDrifterVR"
+    },
+    {
+      "slug": "doodlearium",
+      "repo": "syntch/Doodlearium"
+    }
+  ],
+  "support": {
+    "enabled": false,
+    "heading": "Support the games",
+    "blurb": "If you enjoy these games, you can help keep them going.",
+    "links": [
+      {
+        "label": "Example link",
+        "url": "https://example.com/"
+      }
+    ]
+  },
+  "shop": {
+    "enabled": false,
+    "heading": "Shop",
+    "blurb": "Merchandise and extras.",
+    "url": "https://example.com/"
+  }
+}

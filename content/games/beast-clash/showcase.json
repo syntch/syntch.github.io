@@ -1,0 +1,70 @@
+{
+  "title": "Beast Clash",
+  "tagline": "Pick three mythical beasts, then watch them fight.",
+  "status": "playable",
+  "genre": [
+    "Auto battler",
+    "3D"
+  ],
+  "platforms": [
+    "Desktop browser"
+  ],
+  "accent": "#ff7a45",
+  "summary": "A small 3D auto battler. You choose three of nine mythical beasts, the game chooses three, and the two sides fight in real time while you move the camera.",
+  "description": "Beast Clash is a small 3D auto battler built with three.js. You pick **3 beasts** from a roster, the game picks 3 at random, and the two sides fight on their own in one arena. Your only control during a battle is the camera.\n\nA battle runs in real time until one side has no beasts left. If 90 seconds pass first, the side with the higher total health percentage wins. Afterwards you see a damage summary for each beast and can rematch with the same picks or choose new ones.\n\nThe game also includes a **Bestiary**, a viewer where each beast plays its animations, effects and sounds, along with its stats and fighting style. There are two arenas: a stone arena lit by braziers, and a waterfall grotto in a forest clearing.",
+  "features": [
+    "Nine beasts to choose from, with distinct roles and special abilities",
+    "Real-time fights with computer-controlled beasts on both sides",
+    "Orbit, side, top and overview cameras, plus a ride-along view behind any beast",
+    "Two arenas: Stone Arena and Waterfall Grotto",
+    "A Bestiary viewer with animations, effects, sounds and stats for every beast"
+  ],
+  "controls": [
+    {
+      "input": "Drag",
+      "action": "Rotate the camera around the arena"
+    },
+    {
+      "input": "Scroll wheel",
+      "action": "Zoom in and out"
+    },
+    {
+      "input": "Camera buttons",
+      "action": "Jump to Overview, Side or Top view"
+    },
+    {
+      "input": "Keys 1 to 6",
+      "action": "Ride along behind a beast"
+    }
+  ],
+  "media": {
+    "cover": "media/wendigo.png",
+    "gallery": [
+      {
+        "src": "media/wendigo.png",
+        "alt": "The Wendigo, an antlered stalker",
+        "type": "image"
+      },
+      {
+        "src": "media/unicorn.png",
+        "alt": "The Unicorn",
+        "type": "image"
+      },
+      {
+        "src": "media/siege-mech.png",
+        "alt": "The Siege Mech, a walking fortress",
+        "type": "image"
+      }
+    ]
+  },
+  "demo": {
+    "available": false,
+    "mode": "embed",
+    "aspect": "16/9",
+    "notes": "",
+    "requires": ""
+  },
+  "links": [],
+  "updated": "",
+  "version": ""
+}

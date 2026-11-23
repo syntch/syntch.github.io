@@ -1,0 +1,35 @@
+{
+  "title": "Void Drifter VR",
+  "tagline": "The Void Drifter fight on a holographic table, or from the cockpit.",
+  "status": "in-development",
+  "genre": ["Rogue-lite", "VR", "AR", "Sci-fi"],
+  "platforms": ["Meta Quest 3 (WebXR)", "Desktop browser"],
+  "accent": "#a06bff",
+  "summary": "The VR and AR version of Void Drifter for Meta Quest 3. It runs as a WebXR page in the Quest Browser, so there is nothing to install on the headset.",
+  "description": "Void Drifter VR is the VR/AR version of Void Drifter, a sci-fi roguelite, for the Meta Quest 3. You fly a cloned ship out of an unfinished Hangar into space farmed by the Gardeners, alien harvesting machines, and decide whether to bank your haul or push deeper.\n\nThe VR version shows the fight on a **holographic tactical table** that you can tilt and grab, or lay on a real table in AR. You can also fly from the cockpit, a chase camera or a gunner seat.\n\nIt is a WebXR web app built with three.js and TypeScript, so it runs in the Quest Browser. The game rules come from the 2D version, whose simulation is shared with this project.\n\nThere is no embedded demo here, because WebXR works best outside an iframe. Open the demo page in a new tab. On a desktop browser the page uses an emulated Quest 3 so you can look around without a headset.",
+  "features": [
+    "A holographic tactical table you can tilt, grab and zoom, in VR or laid on a real table in AR",
+    "Fly from the cockpit, a chase camera or a gunner seat",
+    "Runs in the Quest Browser through WebXR, with nothing to install",
+    "Shares its simulation and rules with the 2D Void Drifter"
+  ],
+  "controls": [
+    { "input": "Right trigger", "action": "Fire (desktop: left click)" },
+    { "input": "Y button (left)", "action": "Open the menu" },
+    { "input": "Left grip", "action": "Grab and move the table" }
+  ],
+  "media": {
+    "cover": "media/relay-top.png",
+    "gallery": [
+      { "src": "media/relay-top.png", "alt": "A render of a relay structure seen from above", "type": "image" },
+      { "src": "media/shield-cockpit.png", "alt": "View from the cockpit with a shield effect", "type": "image" },
+      { "src": "media/range-rings.png", "alt": "Range rings drawn around a ship on the tactical table", "type": "image" },
+      { "src": "media/far-harvester.png", "alt": "A distant Gardener harvester against the sky", "type": "image" },
+      { "src": "media/sky-gas-giant.jpg", "alt": "A gas giant sky texture used in the scene", "type": "image" }
+    ]
+  },
+  "demo": { "available": false, "mode": "link", "aspect": "16/9", "notes": "", "requires": "Meta Quest 3 — open this page in the Quest Browser" },
+  "links": [],
+  "updated": "",
+  "version": ""
+}

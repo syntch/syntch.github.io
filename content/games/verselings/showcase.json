@@ -1,0 +1,31 @@
+{
+  "title": "Verselings: Between the Lines",
+  "tagline": "A parade of tiny bookworms marches across a poem.",
+  "status": "in-development",
+  "genre": ["Puzzle platformer", "2D"],
+  "platforms": ["Desktop browser"],
+  "accent": "#d9a441",
+  "summary": "A poem-to-level puzzle-platformer. Bookworms march across a typeset poem where letters are destructible terrain, punctuation is machinery and rhymes are portals.",
+  "description": "In Verselings: Between the Lines, a parade of tiny bookworms called Verselings marches across a poem, and the poem *is* the level. Its letters are destructible terrain, its punctuation is machinery, and its rhymes are portals. The idea is a guide-the-oblivious-crowd puzzle game, with original characters, art and levels.\n\nA level always looks like a typeset page first and a level second. Each line of text sits in a ledge of earth, worms walk along the tops of the letters, and the first letter of every stanza is a gilded drop cap set into a great tree.\n\nThe game is deterministic: the same poem and seed always produce the same level and the same simulation. The core logic knows nothing about browsers, so a WebXR version for Quest 3 could later reuse it.\n\nThe tone is slapstick, not cruelty: worms splat into inkblots, shrug, and panic adorably. The game is still in development and the art shown here is work in progress.",
+  "features": [
+    "Levels generated from poems: the typeset text becomes the terrain",
+    "Destructible letters, punctuation that works as machinery, and rhymes that act as portals",
+    "A deterministic simulation: same poem and seed, same level",
+    "Art painted over the generated landforms, shown in the progress shots below"
+  ],
+  "controls": [],
+  "media": {
+    "cover": "media/painted-humpty-dumpty.jpg",
+    "gallery": [
+      { "src": "media/painted-humpty-dumpty.jpg", "alt": "A painted level built from the Humpty Dumpty rhyme, with worms on ledges of text", "type": "image" },
+      { "src": "media/painted-owl-and-pussycat.jpg", "alt": "A painted level built from The Owl and the Pussycat", "type": "image" },
+      { "src": "media/painted-twinkle.jpg", "alt": "A painted level built from Twinkle, Twinkle, Little Star", "type": "image" },
+      { "src": "media/reshape-jabberwocky.jpg", "alt": "A level built from Jabberwocky, shown during a terrain reshaping pass", "type": "image" },
+      { "src": "media/reshape-humpty-dumpty-hud.jpg", "alt": "Humpty Dumpty level with the in-game heads-up display", "type": "image" }
+    ]
+  },
+  "demo": { "available": false, "mode": "embed", "aspect": "16/9", "notes": "", "requires": "" },
+  "links": [],
+  "updated": "",
+  "version": ""
+}

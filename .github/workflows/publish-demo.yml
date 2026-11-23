@@ -1,0 +1,88 @@
+# Reusable workflow. Game repos call it to publish their showcase bundle
+# (showcase.json + media/ + demo/) as the `showcase` release asset.
+name: Publish showcase bundle
+
+on:
+  workflow_call:
+    inputs:
+      build-command:
+        type: string
+        default: npm run build -- --base=./
+      out-dir:
+        type: string
+        default: dist
+      node-version:
+        type: string
+        default: '22'
+      showcase-dir:
+        type: string
+        default: showcase
+      demo:
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        if: inputs.demo
+        with:
+          node-version: ${{ inputs.node-version }}
+          cache: npm
+
+      - name: Install and build the demo
+        if: inputs.demo
+        env:
+          BUILD_COMMAND: ${{ inputs.build-command }}
+        run: |
+          npm ci
+          eval "$BUILD_COMMAND"
+
+      - name: Assemble the bundle
+        env:
+          SHOWCASE_DIR: ${{ inputs.showcase-dir }}
+          OUT_DIR: ${{ inputs.out-dir }}
+          WITH_DEMO: ${{ inputs.demo }}
+        run: |
+          set -euo pipefail
+          test -f "$SHOWCASE_DIR/showcase.json" || { echo "::error::$SHOWCASE_DIR/showcase.json not found"; exit 1; }
+          rm -rf bundle && mkdir bundle
+          cp -r "$SHOWCASE_DIR"/. bundle/
+          rm -rf bundle/demo
+          if [ "$WITH_DEMO" = "true" ]; then
+            test -f "$OUT_DIR/index.html" || { echo "::error::$OUT_DIR/index.html not found after build"; exit 1; }
+            cp -r "$OUT_DIR" bundle/demo
+          fi
+          UPDATED="$(git log -1 --format=%cI)" VERSION="$(git rev-parse --short HEAD)" node -e '
+            const fs = require("fs");
+            const f = "bundle/showcase.json";
+            const d = JSON.parse(fs.readFileSync(f, "utf8"));
+            d.updated = process.env.UPDATED;
+            d.version = process.env.VERSION;
+            d.demo = d.demo || {};
+            d.demo.available = fs.existsSync("bundle/demo/index.html");
+            fs.writeFileSync(f, JSON.stringify(d, null, 2) + "\n");
+          '
+          (cd bundle && zip -qr ../showcase-bundle.zip .)
+          ls -la showcase-bundle.zip
+
+      - name: Create or update the `showcase` release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if gh release view showcase >/dev/null 2>&1; then
+            gh release upload showcase showcase-bundle.zip --clobber
+          else
+            gh release create showcase showcase-bundle.zip \
+              --target "$GITHUB_SHA" \
+              --title "Showcase bundle" \
+              --notes "Automated bundle for the showcase site. Replaced on every push to main." \
+              --latest=false
+          fi

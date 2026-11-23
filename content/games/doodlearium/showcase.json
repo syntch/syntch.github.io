@@ -1,0 +1,34 @@
+{
+  "title": "Doodlearium",
+  "tagline": "A family aquarium where every creature was drawn by the family.",
+  "status": "playable",
+  "genre": ["Creative", "Digital aquarium", "Family"],
+  "platforms": ["Self-hosted (home network)"],
+  "accent": "#2fc4b2",
+  "summary": "A digital aquarium for the family TV. Everyone draws creatures on a phone, tablet or PC, and they swim, graze and wander through a little world of lakes, oceans and meadows.",
+  "description": "Doodlearium is a family digital aquarium where everything in it was drawn by the family. It runs on an always-on computer at home. You put it on the TV, and anyone on the home network can draw new creatures from a phone, tablet or PC.\n\nIt is a small world of places: four underwater (Sparkle Lake, Lily Pond, Big Blue Ocean, Shell Beach) and four on land (Buttercup Meadow, Sunny Farm, Rolling Hills, Whispering Woods). The world lives on the server, so every screen showing a place shows the same creatures doing the same things, and life carries on while nobody is watching.\n\nEvery drawing becomes a kind of creature. The world adds more of its kind wherever they suit, so one drawing of a weed can carpet a pond and one fish can become a whole school. Notable events are written into a history that can be turned into stories.\n\n**There is no hosted demo.** Doodlearium needs its own server and is deliberately not meant for the public internet, because it holds a family's drawings. The code is public so you can run your own.",
+  "features": [
+    "Draw creatures from any phone, tablet or PC on the home network",
+    "Eight places to explore, shown on a storybook map",
+    "A shared world: every screen shows the same creatures, and life continues in the background",
+    "A history of notable events that can be turned into stories",
+    "Runs on an always-on home computer, with an update check built in"
+  ],
+  "controls": [
+    { "input": "Click or tap", "action": "Drop food into the tank" },
+    { "input": "Point at a creature", "action": "See its name, who drew it and what it is like" },
+    { "input": "Double-click", "action": "Toggle full screen" },
+    { "input": "M", "action": "Zoom out to the world map" },
+    { "input": "S", "action": "Toggle soft sounds" }
+  ],
+  "media": {
+    "cover": "media/trailer.gif",
+    "gallery": [
+      { "src": "media/trailer.gif", "alt": "A tour of Doodlearium: the world map, the lake, a visiting whale, rain and a rainbow, night in the woods, glow paint, and drawing a fish", "type": "image" }
+    ]
+  },
+  "demo": { "available": false, "mode": "link", "aspect": "16/9", "notes": "Doodlearium is self-hosted: it runs on a computer in your own home and is deliberately not offered as a public web demo. Grab the code from GitHub to run your own.", "requires": "" },
+  "links": [ { "label": "Source code and setup on GitHub", "url": "https://github.com/syntch/Doodlearium" } ],
+  "updated": "",
+  "version": ""
+}
