@@ -20,7 +20,8 @@ const ICON = {
   arrow: '<svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 };
 
-const fmtDate = (iso) => new Date(iso).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+// Show the calendar date as written in the timestamp (the day it was in the author's timezone), not shifted to UTC.
+const fmtDate = (iso) => new Date(/^\d{4}-\d{2}-\d{2}/.test(iso) ? iso.slice(0, 10) : iso).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
 
 export function layout({ site, base, title, description, path: pagePath = '', body, bodyClass = '', gameSlug = '' }) {
   const u = (p) => base + p;
@@ -93,6 +94,7 @@ export function homePage({ site, base, games }) {
       ${hasDemo ? `<a class="btn btn-primary" href="${u(`games/${slug}/#play`)}">${ICON.play}Play demo</a>` : ''}
       <a class="btn" href="${u(`games/${slug}/`)}">Details${ICON.arrow}</a>
     </div>
+    ${data.updated ? `<p class="card-updated muted">Updated <time datetime="${esc(data.updated)}">${esc(fmtDate(data.updated))}</time></p>` : ''}
   </div>
 </li>`)
     .join('\n');

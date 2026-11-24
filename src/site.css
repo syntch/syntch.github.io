@@ -195,3 +195,5 @@ tbody th { font-weight: 700; white-space: nowrap; }
 .stages dt { font-weight: 800; }
 .stages dd { margin: 0; }
 @media (max-width: 480px) { .stages { grid-template-columns: 1fr; gap: 0.15rem; } .stages dd { margin-bottom: 0.75rem; } }
+
+.card-updated { font-size: 0.78rem; margin: auto 0 0; padding-top: 0.9rem; }
