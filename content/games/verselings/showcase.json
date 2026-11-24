@@ -1,7 +1,7 @@
 {
   "title": "Verselings: Between the Lines",
   "tagline": "A parade of tiny bookworms marches across a poem.",
-  "status": "in-development",
+  "status": "alpha",
   "genre": ["Puzzle platformer", "2D"],
   "platforms": ["Desktop browser"],
   "accent": "#d9a441",

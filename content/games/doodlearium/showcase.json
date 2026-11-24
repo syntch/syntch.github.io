@@ -1,7 +1,7 @@
 {
   "title": "Doodlearium",
   "tagline": "A family aquarium where every creature was drawn by the family.",
-  "status": "playable",
+  "status": "beta",
   "genre": ["Creative", "Digital aquarium", "Family"],
   "platforms": ["Self-hosted (home network)"],
   "accent": "#2fc4b2",

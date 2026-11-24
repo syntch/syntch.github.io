@@ -59,13 +59,19 @@ export function renderMarkdown(src) {
 }
 
 // ---------------------------------------------------------------- validation
-export const STATUSES = ['prototype', 'in-development', 'playable', 'released'];
-export const STATUS_LABELS = {
-  prototype: 'Prototype',
-  'in-development': 'In development',
-  playable: 'Playable',
-  released: 'Released',
-};
+// The five stages shown to visitors, in order. Each has a one-line meaning (badge tooltip + about page).
+export const STAGES = [
+  ['tech-demo', 'Tech demo', 'Built to show off a piece of technology or art. Not meant to grow into a full game.'],
+  ['prototype', 'Prototype', 'An early experiment to find out whether the idea is fun. Expect rough edges and missing pieces.'],
+  ['alpha', 'Alpha', 'A real game taking shape. Playable, but features are still being added and things will change.'],
+  ['beta', 'Beta', 'The main features are in. Now being polished, balanced and fixed.'],
+  ['released', 'Released', 'Finished and supported.'],
+];
+// Older values still accepted so a game repo that has not been updated keeps building.
+const LEGACY = { 'in-development': 'In development', playable: 'Playable' };
+export const STATUSES = [...STAGES.map((s) => s[0]), ...Object.keys(LEGACY)];
+export const STATUS_LABELS = { ...Object.fromEntries(STAGES.map(([k, label]) => [k, label])), ...LEGACY };
+export const STATUS_MEANINGS = Object.fromEntries(STAGES.map(([k, , meaning]) => [k, meaning]));
 const MEDIA_EXT = /\.(png|jpe?g|gif|webp|avif|svg|webm|mp4|ogv)$/i;
 const IMAGE_EXT = /\.(png|jpe?g|gif|webp|avif|svg)$/i;
 const VIDEO_EXT = /\.(webm|mp4|ogv)$/i;

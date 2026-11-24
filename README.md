@@ -63,7 +63,7 @@ This runs `vite build` with the game repo as cwd but writes only into `.cache/`.
 3. In the game repo, copy `templates/game-repo/.github/workflows/showcase.yml` and put a copy of
    the seed bundle in a `showcase/` folder. Its Vite config must work with `--base=./`.
 
-`showcase.json` fields: `title`, `tagline`, `status` (`prototype | in-development | playable | released`),
+`showcase.json` fields: `title`, `tagline`, `status` (`tech-demo | prototype | alpha | beta | released`),
 `genre[]`, `platforms[]`, `accent` (`#rrggbb`), `summary`, `description`, `features[]`, `controls[{input,action}]`,
 `media{cover, gallery[{src,alt,type}]}`, `demo{available, mode: embed|link, aspect: "16/9", notes, requires}`,
 `links[{label,url}]`, `updated`, `version`. `updated` and `version` are filled in by CI. The build validates all of

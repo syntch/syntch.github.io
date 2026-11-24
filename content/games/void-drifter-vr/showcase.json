@@ -1,7 +1,7 @@
 {
   "title": "Void Drifter VR",
   "tagline": "The Void Drifter fight on a holographic table, or from the cockpit.",
-  "status": "in-development",
+  "status": "alpha",
   "genre": ["Rogue-lite", "VR", "AR", "Sci-fi"],
   "platforms": ["Meta Quest 3 (WebXR)", "Desktop browser"],
   "accent": "#a06bff",

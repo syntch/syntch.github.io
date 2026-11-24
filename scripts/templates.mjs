@@ -1,5 +1,5 @@
 // Hand-written HTML templates (template literals + esc()).
-import { esc, renderMarkdown, STATUS_LABELS, IMAGE_EXT, VIDEO_EXT } from './lib.mjs';
+import { esc, renderMarkdown, STATUS_LABELS, STATUS_MEANINGS, STAGES, IMAGE_EXT, VIDEO_EXT } from './lib.mjs';
 
 export const CSP = [
   "default-src 'self'",
@@ -75,7 +75,7 @@ ${body}
 }
 
 const chips = (arr, cls = 'chip') => `<ul class="chips" role="list">${arr.map((x) => `<li class="${cls}">${esc(x)}</li>`).join('')}</ul>`;
-const badge = (status) => `<span class="badge badge-${esc(status)}">${esc(STATUS_LABELS[status])}</span>`;
+const badge = (status) => `<span class="badge badge-${esc(status)}"${STATUS_MEANINGS[status] ? ` title="${esc(STATUS_MEANINGS[status])}"` : ''}>${esc(STATUS_LABELS[status])}</span>`;
 
 export function homePage({ site, base, games }) {
   const u = (p) => base + p;
@@ -254,6 +254,10 @@ export function aboutPage({ site, base }) {
 <section class="section prose">
   <h1>About</h1>
   ${renderMarkdown(site.description)}
+  <h2>What the stage labels mean</h2>
+  <dl class="stages">
+${STAGES.map(([, label, meaning]) => `    <dt>${esc(label)}</dt><dd>${esc(meaning)}</dd>`).join(' ')}
+  </dl>
   <p><a class="btn" href="${base}#games">See the games${ICON.arrow}</a></p>
 </section>
 </div>`,
