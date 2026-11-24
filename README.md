@@ -49,7 +49,7 @@ Environment: `SITE_BASE` (default `/`; use `/repo-name/` to test a project-page 
 Try a real demo without waiting for CI:
 
 ```
-node scripts/local-demo.mjs beast-clash D:/dev/beast-clash
+node scripts/local-demo.mjs beast-clash ../beast-clash
 npm run build        # dist/play/beast-clash/ now exists
 ```
 
