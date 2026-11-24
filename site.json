@@ -15,11 +15,13 @@
     },
     {
       "slug": "void-drifter-2d",
-      "repo": "syntch/VoidDrifter2D"
+      "repo": "syntch/VoidDrifter",
+      "asset": "showcase-2d.zip"
     },
     {
       "slug": "void-drifter-vr",
-      "repo": "syntch/VoidDrifterVR"
+      "repo": "syntch/VoidDrifter",
+      "asset": "showcase-vr.zip"
     },
     {
       "slug": "doodlearium",

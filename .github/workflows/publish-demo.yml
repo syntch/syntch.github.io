@@ -20,6 +20,10 @@ on:
       demo:
         type: boolean
         default: true
+      bundle-name:
+        description: Release asset name. Set a distinct one per game when a repo holds several games.
+        type: string
+        default: showcase-bundle.zip
 
 permissions:
   contents: write
@@ -49,6 +53,7 @@ jobs:
           SHOWCASE_DIR: ${{ inputs.showcase-dir }}
           OUT_DIR: ${{ inputs.out-dir }}
           WITH_DEMO: ${{ inputs.demo }}
+          BUNDLE_NAME: ${{ inputs.bundle-name }}
         run: |
           set -euo pipefail
           test -f "$SHOWCASE_DIR/showcase.json" || { echo "::error::$SHOWCASE_DIR/showcase.json not found"; exit 1; }
@@ -69,18 +74,19 @@ jobs:
             d.demo.available = fs.existsSync("bundle/demo/index.html");
             fs.writeFileSync(f, JSON.stringify(d, null, 2) + "\n");
           '
-          (cd bundle && zip -qr ../showcase-bundle.zip .)
-          ls -la showcase-bundle.zip
+          (cd bundle && zip -qr "../$BUNDLE_NAME" .)
+          ls -la "$BUNDLE_NAME"
 
       - name: Create or update the `showcase` release
         env:
           GH_TOKEN: ${{ github.token }}
+          BUNDLE_NAME: ${{ inputs.bundle-name }}
         run: |
           set -euo pipefail
           if gh release view showcase >/dev/null 2>&1; then
-            gh release upload showcase showcase-bundle.zip --clobber
+            gh release upload showcase "$BUNDLE_NAME" --clobber
           else
-            gh release create showcase showcase-bundle.zip \
+            gh release create showcase "$BUNDLE_NAME" \
               --target "$GITHUB_SHA" \
               --title "Showcase bundle" \
               --notes "Automated bundle for the showcase site. Replaced on every push to main." \

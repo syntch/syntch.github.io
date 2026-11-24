@@ -7,7 +7,7 @@ import { spawnSync } from 'node:child_process';
 import { ROOT, CACHE, readJson, rmrf } from './lib.mjs';
 
 const TAG = 'showcase';
-const ASSET = 'showcase-bundle.zip';
+const DEFAULT_ASSET = 'showcase-bundle.zip';
 const MAX_BYTES = 300 * 1024 * 1024;
 const token = process.env.SHOWCASE_TOKEN || process.env.GITHUB_TOKEN || '';
 const site = readJson(path.join(ROOT, 'site.json'));
@@ -57,7 +57,9 @@ async function api(url, accept = 'application/vnd.github+json') {
 const fingerprint = [];
 fs.mkdirSync(path.join(CACHE, 'tmp'), { recursive: true });
 
-for (const { slug, repo } of site.games) {
+for (const { slug, repo, asset: assetName } of site.games) {
+  // A repo that holds several games publishes one bundle per game under different asset names.
+  const ASSET = assetName || DEFAULT_ASSET;
   const say = (m) => console.log(`${slug.padEnd(18)} ${m}`);
   try {
     const rel = await api(`https://api.github.com/repos/${repo}/releases/tags/${TAG}`);

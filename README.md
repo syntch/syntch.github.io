@@ -14,7 +14,7 @@ and is hosted on GitHub Pages.
       publish-demo.yml                             builds the game, zips
                                                    showcase.json + media/ + demo/
                                                    -> release tag "showcase"
-                                                      asset showcase-bundle.zip
+                                                      asset showcase-bundle.zip (or a per-game name)
                                                               |
                          hourly / push / manual / repository_dispatch
                                                               v
