@@ -1,0 +1,109 @@
+{
+  "title": "Cymatic",
+  "tagline": "Drain the ink from a silent diorama and let its music bloom back, one Dissonant at a time.",
+  "status": "prototype",
+  "genre": [
+    "Stealth",
+    "Puzzle",
+    "Music"
+  ],
+  "platforms": [
+    "Desktop browser",
+    "Meta Quest (WebXR tabletop)"
+  ],
+  "accent": "#2fb5a0",
+  "summary": "A non-lethal stealth game played over a small diorama in the browser. Each stage is a grey ink-wash scene with its music muted; you pacify the patrolling Dissonants that hold the instruments, and colour and sound return to the world.",
+  "description": "Cymatic is a stealth game on a tabletop diorama, seen from above at an angle. Every stage begins in grey ink wash with its music pushed down to a muffled hum. Patrolling Dissonants, each holding one instrument, are the reason. You play the Clef, a small conductor, and nothing in the game can kill you. A Dissonant that catches you only shocks you and knocks you back, and three shocks in a short time send you back to the start of the stage.\n\nTo win a stage you **pacify every Dissonant**. You get within range, hold the staff on one and it is drawn down into harmony over a few seconds, and the area around it turns from ink wash to watercolour while that instrument joins the mix at full clarity. Their sight cones and rhythms differ: a timpani brute, a pizzicato stalker that darts on the beat, a wind sentinel, a legato wraith and an ostinato swarm. You also have a dash, a thrown Fermata dome that silences what it lands on, a Divisi decoy that draws Dissonants away, a Crescendo pulse that you charge by pacifying and a Rubato field that slows time inside it. When the last Dissonant is pacified a portal opens at the centre and you step into it to finish.\n\n**What is in this build:** four stages, each with its own tempo and layout: the Glasshouse of Dew, the Sunken Aqueduct with a canal and lily-pad bridges, the Clockwork Belfry with swinging pendulums, and the Chamber of Echoes. All the sound is synthesised live in the browser from the game itself, with no audio files, and each Dissonant's instrument comes from where it stands in the room. The models are simple built-in shapes. Your furthest stage and best times are saved in the browser.\n\n**What is not:** recorded music or finished art, a story, or any way to be killed. There is also a Meta Quest mode that puts the diorama on a table in front of you with controller aiming. It has not been tested on a headset yet, so treat it as experimental. This is an early prototype and the balance is still rough.",
+  "features": [
+    "Four stages with their own tempo, time signature and layout, which you can pick between at any time",
+    "A non-lethal stealth loop: shocks only knock you back, and three in a short time send you back to the start",
+    "Pacify patrolling Dissonants by holding the staff on them: the world turns from ink wash to watercolour around each one",
+    "Five Dissonant types with different sight cones and behaviour, from a slow timpani brute to a pizzicato stalker that darts on the beat",
+    "Dash, a thrown Fermata silence dome, a Divisi decoy, a Crescendo pulse and a Rubato slow-time field",
+    "Music synthesised live in the browser: each Dissonant's instrument is heard from where it stands, and it clears as you pacify it",
+    "Stage hazards such as swinging pendulums and standing-wave bridges across a canal",
+    "Progress and best times saved in the browser",
+    "Experimental Meta Quest tabletop mode (VR and passthrough) through WebXR, not yet tested on a headset"
+  ],
+  "controls": [
+    {
+      "input": "W A S D or arrow keys",
+      "action": "Move the Clef"
+    },
+    {
+      "input": "Hold left mouse or Space",
+      "action": "Staff: aim at a Dissonant within range to pacify it"
+    },
+    {
+      "input": "Right mouse or Q",
+      "action": "Throw a Fermata silence dome at the pointer"
+    },
+    {
+      "input": "E",
+      "action": "Place a Divisi decoy at the pointer"
+    },
+    {
+      "input": "Shift",
+      "action": "Sordino dash"
+    },
+    {
+      "input": "R",
+      "action": "Crescendo pulse (needs two charges, which come from pacifying Dissonants)"
+    },
+    {
+      "input": "F",
+      "action": "Rubato field: slows time around you for a few seconds"
+    },
+    {
+      "input": "1 to 4",
+      "action": "Quick-harmonise the Dissonant in that slot of the panel at the bottom"
+    },
+    {
+      "input": "M",
+      "action": "Mute or unmute"
+    },
+    {
+      "input": "Mouse wheel",
+      "action": "Zoom the camera"
+    },
+    {
+      "input": "Stage 1 to 4 buttons, Reset",
+      "action": "Choose a stage, restart the current one"
+    }
+  ],
+  "media": {
+    "cover": "media/cover-belfry-bloom.jpg",
+    "gallery": [
+      {
+        "src": "media/glasshouse-ink-wash.jpg",
+        "alt": "The Glasshouse of Dew at the start of the stage: a grey ink-wash stone courtyard with a fountain in the middle, four Dissonants on round pedestals at the corners, orange and red sight cones in front of them, the Clef conductor at the centre, and a panel along the bottom listing four muted instruments",
+        "type": "image"
+      },
+      {
+        "src": "media/glasshouse-watercolour-bloom.jpg",
+        "alt": "The same courtyard after the timpani Dissonant has been pacified: a warm yellow wash of colour spreads out from its pedestal across the grey stone, with small coloured flowers around it, while the other three Dissonants are still grey and red, and the bottom panel marks the Marimba and Timpani as harmonized",
+        "type": "image"
+      },
+      {
+        "src": "media/aqueduct-tether-cleansing.jpg",
+        "alt": "The Sunken Aqueduct: a blue canal crossed by stone arches behind a stone floor, with the Clef drawing a purple Dissonant toward harmony on its pedestal through a glowing blue staff line, a red ring of its patrol area around it, and the Upright Bass slot in the bottom panel showing Cleansing",
+        "type": "image"
+      },
+      {
+        "src": "media/chamber-of-echoes-tether.jpg",
+        "alt": "The Chamber of Echoes: a stone hall with a green glowing core ring in the middle, the Clef at left holding the staff on a cyan Dissonant with an orange sight cone beside it, other Dissonants on pedestals at the edges, and five instrument slots along the bottom",
+        "type": "image"
+      }
+    ]
+  },
+  "demo": {
+    "available": false,
+    "mode": "embed",
+    "aspect": "16/9",
+    "notes": "The game has sound, all synthesised in the browser. Click the Enter the Conservatory (Start Audio) button on the title card to start it, and turn the volume up first. Plays in the page with the keyboard and mouse. For the experimental Meta Quest tabletop mode, open this demo page itself in the Quest Browser rather than the embedded frame, since WebXR does not work inside the frame, and use the Enter Quest VR or Enter Quest MR button on the title card.",
+    "requires": ""
+  },
+  "links": [],
+  "updated": "",
+  "version": ""
+}

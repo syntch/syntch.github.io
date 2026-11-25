@@ -34,6 +34,10 @@
       "asset": "showcase-xr.zip"
     },
     {
+      "slug": "cymatic",
+      "repo": "syntch/Cymatic"
+    },
+    {
       "slug": "doodlearium",
       "repo": "syntch/Doodlearium"
     }
