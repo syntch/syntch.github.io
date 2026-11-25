@@ -57,6 +57,10 @@ for (const { slug } of site.games) {
 }
 if (failed) process.exit(1);
 
+// Most recently updated first. Ties, and games with no date yet (listed last), keep their site.json order.
+const stamp = (g) => Date.parse(g.data.updated) || 0;
+games.sort((a, b) => stamp(b) - stamp(a));
+
 // ---- write output
 rmrf(DIST);
 fs.mkdirSync(path.join(DIST, 'assets'), { recursive: true });

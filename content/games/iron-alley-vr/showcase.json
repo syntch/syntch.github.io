@@ -1,0 +1,110 @@
+{
+  "title": "Iron Alley VR",
+  "tagline": "The Iron Alley helicopter war, flown behind your helicopter in a Quest 3 headset.",
+  "status": "prototype",
+  "genre": [
+    "Action",
+    "Strategy",
+    "Helicopter combat",
+    "VR"
+  ],
+  "platforms": [
+    "Meta Quest 3 (Quest Browser, WebXR)"
+  ],
+  "accent": "#e0703a",
+  "summary": "Iron Alley in VR. You fly a combat helicopter behind a life-size chase camera and order vehicle columns down three roads from panels beside your view. It needs a Meta Quest 3 and runs as a WebXR page in the Quest Browser, so there is nothing to install.",
+  "description": "Iron Alley VR is the headset version of Iron Alley, a helicopter lane-war game. **It needs a Meta Quest 3 and the Quest Browser.** You sit behind and above your combat helicopter, at life size, over a valley with three roads, called Alleys, that join your headquarters to the enemy’s. You cannot win alone: the war is won by the columns of vehicles you order down the Alleys, while you fly to keep them alive and clear what blocks them.\n\nIn the headset, status, the map and the orders hang on panels to either side, with the middle of your view kept clear. Left stick climbs and turns and right stick flies forward and strafes, or you can switch to a twin-stick Gamer layout in the menu. The right trigger fires the cannon, A drops a bomb, B fires a guided missile once it has a full lock, and the grip flips the helicopter round. **Hold the left trigger to open the order wheel**: the left stick picks a unit and an Alley, and letting go sends it. X loads or sets down a rifle squad or engineers when you are landed.\n\nThe rules are the same as the flat-screen game: five units, outposts that pay Supply, air-defence sites and forward pads, fuel, ammunition and armour, and a computer opponent, an enemy commander and an enemy pilot, at Easy, Normal or Hard. This build has one two-side map and no sound, campaign or multiplayer. It is a prototype and has so far been tested mostly in a Quest emulator on a desktop, so expect rough edges on a real headset.\n\n**Playing from a desktop browser:** there is no embedded demo, because WebXR does not run well inside an embedded frame. Open the demo page in the Quest Browser. On an ordinary desktop browser the page loads a flat preview from the same viewpoint, with the same panels, and you can play it with the keyboard, but the Enter VR button stays greyed out and it is not the headset experience. All the images here are from that desktop view of the page.",
+  "features": [
+    "A life-size chase camera behind and above the helicopter, flown in 3D with momentum, strafing, climbing, turning and a flip",
+    "Nose cannon, bombs and guided missiles with a lock, with aim marks on the ground, and haptics on the controllers",
+    "Panels to either side of your view for status, the map and orders, with the centre of the view kept clear",
+    "An order wheel on the left trigger: pick a unit and an Alley with the stick and let go to send",
+    "Five ground units to send down three Alleys, outposts that pay Supply, air-defence sites and forward pads",
+    "Airlift: land beside a rifle squad or engineers, carry them and set them down off the road",
+    "A computer opponent with an enemy commander and an enemy pilot, at Easy, Normal or Hard",
+    "Helicopter and Gamer stick layouts, switched in the menu",
+    "Runs in the Quest Browser through WebXR, with nothing to install",
+    "The same rules and match as the flat-screen Iron Alley"
+  ],
+  "controls": [
+    {
+      "input": "Left stick",
+      "action": "Climb and descend (up / down), turn (left / right). In the Gamer layout: fly forward, back and strafe"
+    },
+    {
+      "input": "Right stick",
+      "action": "Fly forward and back (up / down), strafe (left / right). In the Gamer layout: climb and turn"
+    },
+    {
+      "input": "Right trigger (hold)",
+      "action": "Nose cannon"
+    },
+    {
+      "input": "A",
+      "action": "Drop a bomb"
+    },
+    {
+      "input": "B",
+      "action": "Guided missile (needs a full lock: the reticle turns cyan)"
+    },
+    {
+      "input": "Right grip",
+      "action": "Flip: turn the helicopter round"
+    },
+    {
+      "input": "Left trigger (hold)",
+      "action": "Order wheel: left stick left / right picks the unit, up / down the Alley, let go to send. A tap repeats the last order, X cancels"
+    },
+    {
+      "input": "X",
+      "action": "Airlift: load or set down a squad while landed. Buys an airframe when you have none"
+    },
+    {
+      "input": "Y (tap)",
+      "action": "Menu and pause"
+    },
+    {
+      "input": "Y (hold)",
+      "action": "Recenter: take your station from where you sit"
+    },
+    {
+      "input": "Menu",
+      "action": "Start, difficulty (Easy, Normal, Hard) and stick layout (Helicopter or Gamer)"
+    }
+  ],
+  "media": {
+    "cover": "media/bomb-strike-centre-alley.jpg",
+    "gallery": [
+      {
+        "src": "media/start-menu-console.jpg",
+        "alt": "The Iron Alley menu floating over the landing pad in the desktop view of the headset page, with Start, Difficulty: Normal, Sticks: Helicopter and Controls rows, the order panel on the left, the map of the three Alleys on the right and the armour, fuel, cannon, bombs and missiles readouts at the bottom right",
+        "type": "image"
+      },
+      {
+        "src": "media/order-wheel.jpg",
+        "alt": "The order wheel open on the pad: the left panel shows the units and the three Alleys with the Centre Alley row highlighted and the prompt to let go of the trigger to send or press X to cancel, and the map on the right highlights the road that order would take",
+        "type": "image"
+      },
+      {
+        "src": "media/flight-over-alleys.jpg",
+        "alt": "The helicopter high above the Alleys in flight, seen from behind, with the three roads running away between hills toward the enemy, the Integrity bars along the top, the altitude reading on the lower left panel and the map on the right",
+        "type": "image"
+      },
+      {
+        "src": "media/bomb-drop-outpost-silenced.jpg",
+        "alt": "A bomb falling below the helicopter on the Centre Alley road as a banner reports an enemy outpost silenced, with columns of blue and orange markers spread along all three roads on the map and the bomb count down to 14",
+        "type": "image"
+      }
+    ]
+  },
+  "demo": {
+    "available": false,
+    "mode": "link",
+    "aspect": "16/9",
+    "notes": "No embedded demo: open this page in the Quest Browser. In an ordinary desktop browser it loads a flat keyboard preview of the same page (the headset emulator used in development is not part of the hosted build), and Enter VR stays disabled.",
+    "requires": "Meta Quest 3 and the Quest Browser. Open this page in the Quest Browser."
+  },
+  "links": [],
+  "updated": "",
+  "version": ""
+}

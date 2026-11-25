@@ -58,7 +58,7 @@ This runs `vite build` with the game repo as cwd but writes only into `.cache/`.
 
 ## Adding a game
 
-1. Add `{ "slug": "my-game", "repo": "owner/repo" }` to `games` in `site.json` (the order is the display order).
+1. Add `{ "slug": "my-game", "repo": "owner/repo" }` to `games` in `site.json` (the home page lists games by last update; this order only breaks ties).
 2. Create `content/games/my-game/showcase.json` and `media/` (see the schema below). Do not add `demo/` to seeds.
 3. In the game repo, copy `templates/game-repo/.github/workflows/showcase.yml` and put a copy of
    the seed bundle in a `showcase/` folder. Its Vite config must work with `--base=./`.

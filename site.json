@@ -24,6 +24,16 @@
       "asset": "showcase-vr.zip"
     },
     {
+      "slug": "iron-alley",
+      "repo": "syntch/IronAlley",
+      "asset": "showcase-2d.zip"
+    },
+    {
+      "slug": "iron-alley-vr",
+      "repo": "syntch/IronAlley",
+      "asset": "showcase-xr.zip"
+    },
+    {
       "slug": "doodlearium",
       "repo": "syntch/Doodlearium"
     }

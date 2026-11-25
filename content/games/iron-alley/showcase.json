@@ -1,0 +1,117 @@
+{
+  "title": "Iron Alley",
+  "tagline": "Fly a combat helicopter over a three-road battlefield and win the ground war beneath you.",
+  "status": "prototype",
+  "genre": [
+    "Action",
+    "Strategy",
+    "Helicopter combat"
+  ],
+  "platforms": [
+    "Desktop browser"
+  ],
+  "accent": "#c9a227",
+  "summary": "A helicopter lane-war game in the browser. You fly a gunship in 3D over a valley with three roads, and win by ordering columns of vehicles down them to the enemy headquarters while you clear their way from the air.",
+  "description": "Iron Alley is a helicopter lane-war game played in the browser. Two armies, yours in blue and the enemy’s in orange, face each other across a valley with **three roads, called Alleys**, that join their headquarters. You fly a combat helicopter behind a chase camera, but you cannot win alone: the war is won on the ground.\n\nFrom your depot you order a unit and an Alley, and it drives itself down that road. There are five units: tank, rifle squad, air-defence track, engineers and Breacher. Rifle squads capture outposts, which pay Supply, and engineers mend your vehicles and capture air-defence sites. A unit that reaches the enemy gate breaches it and takes off Integrity, and the costly Breacher takes off the most. A headquarters with no Integrity left is out. The helicopter cannot do that damage itself. Its job is to keep your columns alive and clear what blocks them.\n\nThe helicopter has a nose cannon, bombs for tanks and structures, and guided missiles that need a full lock on an aircraft or an air-defence unit. It has fuel, ammunition and armour, resupplies on a pad, and is replaced from a few spare airframes when it is shot down. It can also land beside a rifle squad or engineers, pick them up and set them down off the road. The **computer opponent** is an enemy commander that chooses what to build and which Alley to press, plus an enemy pilot that flies its own helicopter. You pick Easy, Normal or Hard before you start, and a match is meant to run 10 to 25 minutes.\n\n**What is in this build:** one two-side map, Tri-Valley, plus a one-road practice map; keyboard and mouse or a gamepad, with two stick layouts. **What is not:** matches with more than two sides, sound, a campaign or multiplayer. The graphics are plain low-poly placeholders. It is a prototype and is still being tuned.",
+  "features": [
+    "A helicopter flown in 3D behind a chase camera, with momentum, strafing, climbing, turning and a half-turn flip, over hills, tree lines and three roads",
+    "Nose cannon, bombs and guided missiles with a lock, plus aim marks on the ground for where cannon fire and a bomb would land",
+    "Fuel, ammunition and armour, with a pad at your headquarters to repair, refuel and rearm, and spare airframes when you are shot down",
+    "Five ground units to order down any of the three Alleys: tank, rifle squad, air-defence track, engineers and Breacher",
+    "Outposts that pay Supply when you hold them, air-defence sites and forward pads, taken by squads and engineers",
+    "Airlift: land beside a rifle squad or engineers, carry them and set them down off the road to capture a site",
+    "Win by breaching the enemy headquarters until its Integrity runs out; overtime decides matches the columns cannot",
+    "A computer opponent with an enemy commander and an enemy pilot, at Easy, Normal or Hard",
+    "A top-down map and a clickable order panel on screen",
+    "Keyboard and mouse or gamepad, with a Helicopter or Gamer stick layout"
+  ],
+  "controls": [
+    {
+      "input": "W / S, A / D or Left / Right",
+      "action": "Fly forward and back, turn left and right"
+    },
+    {
+      "input": "Q / E",
+      "action": "Strafe left and right"
+    },
+    {
+      "input": "Space or Up, C or Ctrl or Down",
+      "action": "Climb, descend"
+    },
+    {
+      "input": "F or left mouse (hold)",
+      "action": "Nose cannon"
+    },
+    {
+      "input": "B or right mouse",
+      "action": "Drop a bomb"
+    },
+    {
+      "input": "R or middle mouse",
+      "action": "Guided missile (needs a full lock on a target in front)"
+    },
+    {
+      "input": "Shift",
+      "action": "Flip: turn the helicopter round"
+    },
+    {
+      "input": "T",
+      "action": "Airlift: load or set down a squad while landed"
+    },
+    {
+      "input": "1 to 5, Z / X, G or Enter",
+      "action": "Orders: pick the unit, pick the Alley, send it. The order panel works with the mouse too"
+    },
+    {
+      "input": "H",
+      "action": "Buy an airframe when you have none left"
+    },
+    {
+      "input": "Esc or P, N",
+      "action": "Pause, restart"
+    },
+    {
+      "input": "Gamepad, Helicopter layout",
+      "action": "Left stick climb and turn, right stick forward and strafe, right trigger cannon, A bomb, B missile, right bumper flip, X airlift, Start pause"
+    },
+    {
+      "input": "Gamepad, Gamer layout",
+      "action": "Left stick forward and strafe, right stick climb and turn. Hold the left trigger for the order wheel: left stick picks the unit and Alley, let go to send"
+    }
+  ],
+  "media": {
+    "cover": "media/tank-column-advance.jpg",
+    "gallery": [
+      {
+        "src": "media/start-menu.jpg",
+        "alt": "The Iron Alley start menu over the blue headquarters and landing pad: Easy, Normal and Hard difficulty buttons with Normal selected, a Helicopter and Gamer stick layout choice, and Start and Controls buttons",
+        "type": "image"
+      },
+      {
+        "src": "media/hq-pad-orders.jpg",
+        "alt": "The helicopter on its pad in front of the blue headquarters thirty seconds into a match, with the armour, fuel, ammunition and Supply readout at top left, the order panel for tanks, rifles, air-defence tracks, engineers and the Breacher on the three Alleys, the Integrity bars along the top and a map of the three Alleys at top right",
+        "type": "image"
+      },
+      {
+        "src": "media/flight-over-centre-alley.jpg",
+        "alt": "The helicopter in flight at about 50 metres and 60 metres a second, following the brown Centre Alley road between green hills, with the cannon range ring below it and orange enemy markers on the horizon",
+        "type": "image"
+      },
+      {
+        "src": "media/enemy-column-centre-alley.jpg",
+        "alt": "Hovering low over the Centre Alley road, looking down it toward a cluster of orange enemy vehicles and their markers, with the cannon count at zero in red, the order panel showing the fight on each Alley and the map showing columns on all three roads",
+        "type": "image"
+      }
+    ]
+  },
+  "demo": {
+    "available": false,
+    "mode": "embed",
+    "aspect": "16/9",
+    "notes": "Plays in the page with the keyboard and mouse or a gamepad. The Quest version is a separate page.",
+    "requires": ""
+  },
+  "links": [],
+  "updated": "",
+  "version": ""
+}
