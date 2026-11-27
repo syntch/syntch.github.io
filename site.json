@@ -38,6 +38,10 @@
       "repo": "syntch/Cymatic"
     },
     {
+      "slug": "hullsplitter",
+      "repo": "syntch/Hullsplitter"
+    },
+    {
       "slug": "doodlearium",
       "repo": "syntch/Doodlearium"
     }

@@ -1,0 +1,119 @@
+{
+  "title": "Hullsplitter",
+  "tagline": "Blast open an enemy ship with a siege cannon, then drop in aboard a giant boarding mech and take its hangars apart.",
+  "status": "prototype",
+  "genre": [
+    "Action",
+    "Shooter",
+    "VR"
+  ],
+  "platforms": [
+    "Desktop browser",
+    "Quest 3 VR",
+    "Quest 3 MR"
+  ],
+  "accent": "#d9483b",
+  "summary": "A first-person space-pirate game in two parts: a siege cannon that cracks an enemy hull open, then a four-storey boarding mech that walks in and stomps through the crew. Built for the desktop browser and the Quest 3, in VR and in passthrough.",
+  "description": "Hullsplitter is a first-person game about boarding enemy ships. You are never a floating camera: every part of a run puts you inside a heavy, welded-iron enclosure, first the gunnery bay of your dreadnought and then the cockpit of a giant mech. It runs in the browser on a desktop, and on a Quest 3 in VR or in mixed-reality passthrough.\n\nA run starts on your dreadnought's **bridge**. At the holotable you pick a target ship and one of three breach points on its hull, each with its own difficulty and the kind of mission waiting behind it. Then you sit at the **siege cannon**: a slow, heavy gun, one shell every 1.7 seconds, with big recoil and a shockwave where each shell lands. You wear down a shield, shear the armour plates off the hull and open the breach while the ship's guards shoot back and fighters fly past. A drop pod then takes you across, and you are in the mech.\n\nThe **mech** is 23 metres tall, with the cockpit about 20 metres up, so the guards on the floor come up to its ankles. You walk and turn with the legs, aim the torso with the mouse, fire a rotary gun and rockets, and stomp. The guns heat up and have to be vented. Three missions sit behind the three breach points: **Sector Raid** in a fleet hangar, where you take objective nodes and open a vault; **Gauntlet Push**, a long corridor held beachhead by beachhead with turret pods you place; and **Fortress Assault**, where you breach a series of walls and fight a Bastion mech. Win, and you grab the loot, get out, ride home and see a results board.\n\n**What is in this build:** the whole loop from the bridge back to the bridge, with 131 sounds, one target ship with three breach points, one mech chassis, and desktop, Quest VR and Quest MR control schemes. The graphics are plain placeholder shapes and the balance is still being tuned. **What is not:** online co-op. The game is designed for one to four players, but there is no networking in the code yet, so every session is solo. The mouse feel, and MR on a headset, have not had much testing.",
+  "features": [
+    "Siege-cannon gunnery from inside a turret bay: shield, armour plates, shell shockwaves, heat and venting, with guards and fighters around the target ship",
+    "A first-person drop-pod launch from the cannon bay into the mech",
+    "A 23-metre boarding mech with a cockpit about 20 metres up: stride and footfall weight, a rotary gun, rockets, a stomp and a heat gauge",
+    "Three missions behind three breach points: Sector Raid, Gauntlet Push and Fortress Assault",
+    "Infantry crowds, armoured carriers and a Bastion mech with plates and an exposed core to shoot",
+    "Loot, extraction, a ride home and a results board, with a running bridge log across raids",
+    "A bridge with a holotable for picking the target ship and breach point",
+    "Positional sound with a deep, low-pitched mix: 131 sound files, mute and volume keys",
+    "Keyboard and mouse, gamepad, and Quest controllers, with a seat-height setting for seated VR",
+    "Mixed-reality passthrough on Quest 3, where your room is the cockpit and a window shows the world"
+  ],
+  "controls": [
+    {
+      "input": "Mouse (click the game to lock it)",
+      "action": "Aim the cannon in the gunnery bay, and the torso and both arms of the mech. Esc lets go of the mouse"
+    },
+    {
+      "input": "A / D, Q / E, then hold F",
+      "action": "On the bridge: A and D pick the breach point, Q and E pick the target ship, hold F to commit"
+    },
+    {
+      "input": "Left mouse, right mouse",
+      "action": "Fire. In the gunnery bay the left button fires the cannon. In the mech, left is the right-arm gun and right is the left-arm rockets"
+    },
+    {
+      "input": "F",
+      "action": "Launch the drop pod. In the mech, hold to hack, pry or extract"
+    },
+    {
+      "input": "W / S, A / D",
+      "action": "Mech legs: walk forward and back, turn"
+    },
+    {
+      "input": "Q / E",
+      "action": "Sidestep"
+    },
+    {
+      "input": "V",
+      "action": "Vent heat"
+    },
+    {
+      "input": "1, 2, 3, T",
+      "action": "Mech: stomp, turret pod, drop cargo, turret placement mode"
+    },
+    {
+      "input": "M, [ and ]",
+      "action": "Mute the sound, lower and raise the volume. K hides the debug panel"
+    },
+    {
+      "input": "C (hold), PgUp, PgDn",
+      "action": "Recalibrate and adjust seat height"
+    },
+    {
+      "input": "Gamepad",
+      "action": "Left stick move and turn, right stick aim, right trigger fire, left trigger rockets, A vent, X stomp, Y turret pod, B drop cargo, right bumper interact or launch, Start menu"
+    },
+    {
+      "input": "Quest controllers: sticks and triggers",
+      "action": "Left stick legs, right stick torso, point each controller to aim that arm, right trigger the gun, left trigger the rockets"
+    },
+    {
+      "input": "Quest controllers: buttons",
+      "action": "A vent, B stomp, X turret pod, Y turret mode, right grip interact or launch, right stick click drop cargo, hold the left grip to set seat height"
+    }
+  ],
+  "media": {
+    "cover": "media/ship-gunnery-shockwave.jpg",
+    "gallery": [
+      {
+        "src": "media/bridge-holotable.jpg",
+        "alt": "The dreadnought bridge looking out at stars over a city-like ship hull, with the holotable in the foreground showing a glowing blue volume with coloured breach markers, a Breach Point panel for the Lower Cargo Hangar (difficulty Low, Phase 2 Sector Raid), a list of three target ships, a bridge log, and a banner reading hold F or grip to commit",
+        "type": "image"
+      },
+      {
+        "src": "media/mech-cockpit-apc.jpg",
+        "alt": "From the mech cockpit in a lit hangar: the cage struts, four dials for hull, heat, stomp and spin, a status screen on the right with the control legend, the rotary gun on the right arm, and a tracked carrier with orange exhausts burning beside the aim point with grey smoke along its hull",
+        "type": "image"
+      },
+      {
+        "src": "media/fortress-gate-columns.jpg",
+        "alt": "The mech cockpit facing a tall hangar wall in the Fortress Assault mission, with a green radar screen at left, a panel at bottom left reading breach the gate with three numbered columns, a yellow target frame ahead, stacked cargo containers and small forklifts on the floor",
+        "type": "image"
+      },
+      {
+        "src": "media/gauntlet-turret-aura.jpg",
+        "alt": "The mech cockpit in the Gauntlet Push corridor with the right-arm gun firing a bright muzzle flash at a low orange barrier, a corridor map at bottom left with numbered beachheads and an aura label, a small socket panel for turret pods at bottom centre, and a status screen at right",
+        "type": "image"
+      }
+    ]
+  },
+  "demo": {
+    "available": false,
+    "mode": "embed",
+    "aspect": "16/9",
+    "notes": "Plays in the page with the keyboard and mouse or a gamepad: click the game once to lock the mouse and to turn the sound on. The game has sound (131 files), and the browser keeps it off until you click or press a key. A small debug panel at top left is on by default; press K to hide it. For Quest VR or MR, open this demo page itself in the Quest Browser and use the Enter VR or Enter MR button at the bottom of the game, because WebXR does not work inside the embedded frame. Co-op is not built yet, so a visitor always plays solo.",
+    "requires": ""
+  },
+  "links": [],
+  "updated": "",
+  "version": ""
+}
